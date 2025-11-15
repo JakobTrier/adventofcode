@@ -3,7 +3,7 @@
 # Version 1.0: Keeping the order
 # Load the data
 write-host $(get-date -format "yyyy.MM.dd HH:mm:ss") "Loading data" 
-$puzzledata = Get-Content 2024day11.dat 
+$puzzledata = Get-Content 2024day11.dat
 # $puzzledata = Get-Content 2024day11example.dat  # -> 55312; took 8½ minutes in PowerShell 5.1.22621.6060, 27 minutes in PowerShell 7.5.4
 
 # Declare variables
