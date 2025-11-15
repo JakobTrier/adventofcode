@@ -6,7 +6,7 @@
 # Load the data
 write-host $(get-date -format "yyyy.MM.dd HH:mm:ss") "Loading data" 
 $puzzledata = Get-Content 2024day11.dat 
-#$puzzledata = Get-Content 2024day11example.dat  # -> 55312; took 6 minutes and 50 seconds
+# $puzzledata = Get-Content 2024day11example.dat  # -> 55312; took 6 minutes and 50 seconds
 
 # Declare variables
 [int64[]]$stones = @()
