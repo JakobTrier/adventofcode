@@ -19,9 +19,9 @@ $stones = $puzzledata.split(' ')
 write-host $(get-date -format "yyyy.MM.dd HH:mm:ss") "Starting with $($stones.count) stone(s):"$stones
 write-host $(get-date -format "yyyy.MM.dd HH:mm:ss") "'Blinking'" $iterations "time(s)"
 
-for ( $m = 0 ; $m -lt $iterations ; $m++ ) {
+for ( $m = 0 ; $m -lt $iterations ; $m++ ) {             # Loop through all the stones $iterration times (blinks)
   $elements = $stones.count
-  for ( $i = 0 ; $i -lt $elements ; $i++ ) {
+  for ( $i = 0 ; $i -lt $elements ; $i++ ) {              # Look at one stone at the time
       if ( $stones[$i] -eq 0 ) {                            # If the stone is engraved with the number 0, 
       $stones[$i] = 1                                     # it is replaced by a stone engraved with the number 1.
     } elseif ( ([string]$stones[$i]).length % 2 -eq 0 ) { # If the stone is engraved with a number that has an even number of digits, it is replaced by two stones
