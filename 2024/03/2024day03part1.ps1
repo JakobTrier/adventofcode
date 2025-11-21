@@ -2,7 +2,7 @@ $puzzledata = Get-Content 2024day3.dat
 
 $regex = [regex] '(mul\(\d+,\d+\))'
 
-$allMatches = $regex.Matches($puzzleInput)
+$allMatches = $regex.Matches($puzzledata)
 $total = 0
 
 foreach ($match in $allMatches) {
