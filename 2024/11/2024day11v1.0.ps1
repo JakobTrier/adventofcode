@@ -22,7 +22,7 @@ $pointer += -1 # indicate end of data
 write-host $(get-date -format "yyyy.MM.dd HH:mm:ss") "Starting with $($stones.count) stone(s):"$stones
 write-host $(get-date -format "yyyy.MM.dd HH:mm:ss") "'Blinking'" $iterations "time(s)"
 
-for ( $m = 0 ; $m -lt $iterations ; $m++ ) {
+for ( $m = 0 ; $m -lt $iterations ; $m++ ) {           # number of blinks
   $element = 0 # we start looking at the first element
   $EndOfData = $false
   while ( $EndOfData -eq $false ) {
