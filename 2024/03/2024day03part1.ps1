@@ -1,4 +1,4 @@
-$puzzledata = Get-Content 2024day1.dat
+$puzzledata = Get-Content 2024day3.dat
 
 $regex = [regex] '(mul\(\d+,\d+\))'
 
