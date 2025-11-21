@@ -25,9 +25,9 @@ for ( $m = 0 ; $m -lt $iterations ; $m++ ) {
       if ( $data[$i] -eq 0 ) {                            # If the stone is engraved with the number 0, 
         $data[$i] = 1                                     # it is replaced by a stone engraved with the number 1.
     } elseif ( ([string]$data[$i]).length % 2 -eq 0 ) { # If the stone is engraved with a number that has an even number of digits, it is replaced by two stones
-        $half = ([string]$data[$i]).length/2
-        $part1 = [bigint]($data[$i]/[Math]::Pow(10,(($half) )))
- 	    $s = [string]$data[$i]
+        $half = ([string]$data[$i]).length/2           
+        $part1 = [bigint]($data[$i]/[Math]::Pow(10,(($half) )))    # new method to calculate the number on the first stone
+ 	      $s = [string]$data[$i]
         $lengthofnumber = ([string]$data[$i]).Length
         $rightStr = $s[$half..($lengthofnumber - 1)] -join ''
         $part2 = if ($rightStr -eq '') { 0 } else { [bigint]::Parse($rightStr) }
