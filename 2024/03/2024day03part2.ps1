@@ -1,4 +1,4 @@
-$puzzledata = Get-Content 2024day1.dat
+$puzzleinput = Get-Content 2024day1.dat
 
 $puzzleInput = $puzzleInput -replace "don't\(\)(.|\n)*?do\(\)",""
 
