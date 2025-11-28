@@ -1,6 +1,6 @@
 # By JATR, 2025.11.12
 # https://adventofcode.com/2024/day/11#part2
-# Version 6.0: Memoisation in da house!
+# Version 6.0: Memoisation in da house! See https://en.wikipedia.org/wiki/Memoization
 # Stored at https://github.com/JakobTrier/adventofcode
 
 # Load the data
