@@ -4,7 +4,7 @@
 $puzzledata = Get-Content 2025day01.dat   # Load the data
 
 $answer1  = 0                             # Declare variable used to store answer to part 1
-$answer2  = 0                             # Declare variable used to store answer to part 1
+$answer2  = 0                             # Declare variable used to store answer to part 2
 $location = 50                            # Start location
 
 $puzzledata | foreach {
