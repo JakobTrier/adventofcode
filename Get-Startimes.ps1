@@ -1,7 +1,15 @@
-# By JATR, 2025.12.13
-#  Using data from: https://adventofcode.com/2025/leaderboard/private/view/4911913.json?view_key=e98ced22
+# By JATR, 2025.12.17
+#  Using data from: https://adventofcode.com/<year>/leaderboard/private/view/4911913.json?view_key=e98ced22
+param([Int]$aar=$((get-date).year))           # Default year is the current year
 
-$FilePath = "2025participants.dat"
+Write-host "Script executed at" $(get-date -format "yyyy.MM.dd HH:mm:ss")
+
+if ( -not ([int]$aar -ge 2015 -and [int]$aar -le $((get-date).year) )) {    # If year is not between 2015 and current year then ...
+	$aar=[string]$((get-date).year)                                                # ... set year to current year
+	write-host "Setting year to current year"
+}
+
+$FilePath = [string]$aar + "participants.dat"
 $DownloadFile = $true
 
 if (Test-Path -Path $FilePath) { # if the file is not there then download it
@@ -20,7 +28,8 @@ else {
 }
 
 if ($DownloadFile) {
-  Invoke-WebRequest -Uri "https://adventofcode.com/2025/leaderboard/private/view/4911913.json?view_key=e98ced22" -OutFile $FilePath    # Download the latest data from the web and store it in a local file
+  $URI = "https://adventofcode.com/" + $([string]$aar) + "/leaderboard/private/view/4911913.json?view_key=e98ced22"
+  Invoke-WebRequest -Uri $URI -OutFile $FilePath    # Download the latest data from the web and store it in a local file
 } 
 
 $json = Get-Content $FilePath -Encoding UTF8 | ConvertFrom-Json | Select-Object -Expand Members
